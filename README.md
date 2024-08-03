@@ -2,6 +2,10 @@
 
 OpenPerPlex is an open-source AI search engine that leverages cutting-edge technologies to provide search capabilities over the web.
 
+## front end app (vuejs)
+
+- `https://github.com/YassKhazzan/openperplex_front.git`
+
 ## 🌟 Features
 
 - Semantic chunking using Cohere

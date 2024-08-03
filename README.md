@@ -8,7 +8,7 @@ OpenPerPlex is an open-source AI search engine that leverages cutting-edge techn
 
 ## 🌟 Features
 
-- Semantic chunking using Cohere
+- Semantic chunking using Cohere and semantic-chunkers library (`https://github.com/aurelio-labs/semantic-chunkers/blob/main/semantic_chunkers/chunkers/statistical.py`)
 - Reranking results with JINA API
 - Google search integration via serper.dev
 - Groq as the inference engine

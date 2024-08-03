@@ -14,24 +14,24 @@ OpenPerPlex is an open-source AI search engine that leverages cutting-edge techn
 
 ### Prerequisites
 
-- Python 3.7+
+- Python 3.11+
 - pip
 
 ### Installation
 
 1. Clone the repository:
- git clone [https://github.com/YassKhazzan/openperplex_backend_os.git](https://github.com/YassKhazzan/openperplex_backend_os.git)
+ git clone [https://github.com/YassKhazzan/openperplex_backend_os.git](https://github.com/YassKhazzan/openperplex_backend_os.git) |
 cd openperplex
-2. Install the required packages: pip install -r requirements.txt
+2. Install the required packages: `pip install -r requirements.txt`
 3. Set up your environment variables:
 - Copy the `.env_example` file to `.env`
 - Fill in your API keys in the `.env` file
 
 ### Running the Project
 
-To start the OpenPerPlex server: uvicorn main:app --port 8000
+To start the OpenPerPlex server: ```uvicorn main:app --port 8000```
 
-The server will be available at `http://localhost:8000`.
+The server will be available at `http://localhost:8000`
 
 ## 🔧 Configuration
 
@@ -60,7 +60,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📬 Contact
 
-For any questions or feedback, please open an issue on this repository.
+For any questions or feedback, please open an issue on this repository or contact me on [X](https://x.com/KhazzanYassine)     
 
 ---
 

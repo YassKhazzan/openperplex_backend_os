@@ -58,7 +58,6 @@ def build_context(sources_result, query, pro_mode, date_context):
             final_list = combined_list
 
         search_contexts = "\n\n".join(final_list)
-        print(search_contexts)
         return search_contexts
     except Exception as e:
         logger.exception(f"An error occurred while building context: {e}")

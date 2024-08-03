@@ -12,7 +12,7 @@ OpenPerPlex is an open-source AI search engine that leverages cutting-edge techn
 - Reranking results with JINA API
 - Google search integration via serper.dev
 - Groq as the inference engine
-- Llama 3.1 70B MODEL
+- Llama 3 70B MODEL
 
 ## 🚀 Quick Start
 

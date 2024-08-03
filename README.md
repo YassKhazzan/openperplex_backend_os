@@ -20,8 +20,7 @@ OpenPerPlex is an open-source AI search engine that leverages cutting-edge techn
 ### Installation
 
 1. Clone the repository:
- git clone [https://github.com/YassKhazzan/openperplex_backend_os.git](https://github.com/YassKhazzan/openperplex_backend_os.git) |
-cd openperplex
+ git clone [https://github.com/YassKhazzan/openperplex_backend_os.git](https://github.com/YassKhazzan/openperplex_backend_os.git) 
 2. Install the required packages: `pip install -r requirements.txt`
 3. Set up your environment variables:
 - Copy the `.env_example` file to `.env`

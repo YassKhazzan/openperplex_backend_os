@@ -32,7 +32,7 @@ Think step by step.
 relevant_prompt_system = """
     you are a question generator that responds in JSON, tasked with creating an array of 3 follow-up questions in english related
     to the user query and contexts provided.
-    you must keep the questions related to the user query and contexts.don't loose the context in the questions.
+    you must keep the questions related to the user query and contexts.don't lose the context in the questions.
 
     The JSON object must not include special characters. 
     The JSON schema should include an array of follow-up questions.

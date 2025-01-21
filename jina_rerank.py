@@ -12,34 +12,46 @@ logger = logging.getLogger(__name__)
 API_URL = "https://api.jina.ai/v1/rerank"
 API_KEY = os.getenv("JINA_API_KEY")
 MODEL = "jina-reranker-v2-base-multilingual"
+
+if not API_KEY:
+    logger.error("JINA_API_KEY is not set in environment variables.")
+    raise ValueError("JINA_API_KEY is required but not set.")
+
 HEADERS = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {API_KEY}"
 }
 
+session = requests.Session()
+session.headers.update(HEADERS)
 
-def get_reranking_jina(docs: List[str], query: str, top_res: int) -> List[str]:
+
+def get_reranking_jina(docs: List[str], query: str, top_res: int, timeout: int = 10) -> List[str]:
     """
     Get reranked documents using Jina AI API.
 
     :param docs: List of documents to rerank
     :param query: Query string
     :param top_res: Number of top results to return
+    :param timeout: Request timeout in seconds
     :return: List of reranked documents
     """
-    try:
-        data = {
-            "model": MODEL,
-            "query": query,
-            "documents": docs,
-            "top_n": top_res
-        }
+    data = {
+        "model": MODEL,
+        "query": query,
+        "documents": docs,
+        "top_n": top_res
+    }
 
-        response = requests.post(API_URL, headers=HEADERS, json=data, timeout=10)
+    try:
+        response = session.post(API_URL, json=data, timeout=timeout)
         response.raise_for_status()
         response_data = response.json()
 
-        return [item['document']['text'] for item in response_data.get('results', [])]
+        reranked_docs = [item['document']['text'] for item in response_data.get('results', [])]
+        if not reranked_docs:
+            logger.warning("No reranked results returned.")
+        return reranked_docs
 
     except RequestException as e:
         logger.error(f"HTTP error occurred while reranking: {e}")
